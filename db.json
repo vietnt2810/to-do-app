@@ -1,0 +1,66 @@
+{
+  "users": [
+    {
+      "email": "viet@gmail.com",
+      "password": "$2a$10$cSJeu.GHnNKjsqaFU8Enw.vSfRo3to6BRdc7BJ7mz9D3/UroIuktu",
+      "username": "XD",
+      "id": 1
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "categoryName": "Category 1"
+    },
+    {
+      "id": 2,
+      "categoryName": "Category 2"
+    },
+    {
+      "categoryName": "123123123",
+      "id": 3
+    },
+    {
+      "categoryName": "123123",
+      "id": 4
+    },
+    {
+      "categoryName": "123123",
+      "id": 5
+    },
+    {
+      "categoryName": "123123",
+      "id": 6
+    }
+  ],
+  "tasks": [
+    {
+      "title": "xd",
+      "categoryId": 1,
+      "status": false,
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "title": "xd",
+      "categoryId": 1,
+      "status": false,
+      "userId": 1,
+      "id": 5
+    },
+    {
+      "title": "XDDD",
+      "categoryId": 1,
+      "status": false,
+      "userId": 1,
+      "id": 6
+    },
+    {
+      "title": "12323",
+      "categoryId": 1,
+      "status": false,
+      "userId": 1,
+      "id": 7
+    }
+  ]
+}
