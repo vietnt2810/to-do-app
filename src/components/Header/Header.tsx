@@ -2,7 +2,7 @@ import stitches from "stiches";
 
 import { NavLink } from "react-router-dom";
 
-import { useAuth } from "hooks/useAuth";
+import { useAuth } from "hooks/common/useAuth";
 
 const { styled } = stitches;
 

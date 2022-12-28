@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
-import { useAuth } from "hooks/useAuth";
-
+import { useAuth } from "hooks/common/useAuth";
 import {
   Background,
-  Form,
-  Title,
-  SubTitle,
-  ForgetPassword,
   Button,
-  OptionLine,
+  ForgetPassword,
+  Form,
   OptionButton,
+  OptionLine,
+  SubTitle,
+  Title,
 } from "../components/formStyles";
 import FormInput from "../components/FormInput";
 

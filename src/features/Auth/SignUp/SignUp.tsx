@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
-import { useAuth } from "hooks/useAuth";
+import { useAuth } from "hooks/common/useAuth";
 
 import {
   Background,

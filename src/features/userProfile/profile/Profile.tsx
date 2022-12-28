@@ -1,5 +1,5 @@
 import { Outlet, useNavigate } from "react-router-dom";
-import { useAuth } from "hooks/useAuth";
+import { useAuth } from "hooks/common/useAuth";
 
 import profileImage from "assets/images/userProfile.png";
 
@@ -11,7 +11,7 @@ import {
   Username,
   Email,
 } from "./profileStyles";
-import { Button } from "components/StyledComponents/button";
+import { Button } from "components/styledComponents/button";
 
 const ProfileScreen: React.FC = () => {
   const auth = useAuth();

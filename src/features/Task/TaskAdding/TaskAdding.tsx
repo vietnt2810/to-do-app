@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAddTask } from "hooks/useAddTask";
-import { useGetCategories } from "hooks/useGetCategories";
+import { useAddTask } from "hooks/task/taskAdding/useAddTask";
+import { useGetCategories } from "hooks/task/common/useGetCategories";
 
 import { Category } from "types/types";
 
@@ -13,8 +13,8 @@ import {
   FieldName,
   InputField,
   CategorySelectField,
-} from "components/StyledComponents/dialogForm";
-import { Button, ButtonHolder } from "components/StyledComponents/button";
+} from "components/styledComponents/dialogForm";
+import { Button, ButtonHolder } from "components/styledComponents/button";
 
 const TaskAdding: React.FC = () => {
   const navigate = useNavigate();

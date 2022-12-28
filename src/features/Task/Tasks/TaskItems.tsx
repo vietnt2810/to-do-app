@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDeleteTask } from "hooks/useDeleteTask";
-import { useUpdateTask } from "hooks/useUpdateTask";
+import { useDeleteTask } from "hooks/task/tasks/useDeleteTask";
+import { useUpdateTask } from "hooks/task/common/useUpdateTask";
 
 import { Task } from "types/types";
 
@@ -14,7 +14,7 @@ import {
 } from "@mui/material";
 
 import { TableContentRow, TaskButtonHolder, TaskButton } from "./tasksStyles";
-import { Button } from "components/StyledComponents/button";
+import { Button } from "components/styledComponents/button";
 
 const TaskItems: React.FC<{ currentItems: Task[] }> = ({ currentItems }) => {
   const navigate = useNavigate();

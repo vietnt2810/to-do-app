@@ -5,6 +5,12 @@
       "password": "$2a$10$cSJeu.GHnNKjsqaFU8Enw.vSfRo3to6BRdc7BJ7mz9D3/UroIuktu",
       "username": "XD",
       "id": 1
+    },
+    {
+      "email": "viet2@gmail.com",
+      "password": "$2a$10$LdH.9YbtFCAhu00b9NkPSODD2Dj9mfPT5FSIw8SBcpoGadbvt6I1W",
+      "username": "123123",
+      "id": 2
     }
   ],
   "categories": [
@@ -36,7 +42,7 @@
   "tasks": [
     {
       "title": "xd",
-      "categoryId": 1,
+      "categoryId": 3,
       "status": false,
       "userId": 1,
       "id": 3
@@ -49,18 +55,25 @@
       "id": 5
     },
     {
-      "title": "XDDD",
-      "categoryId": 1,
-      "status": false,
-      "userId": 1,
-      "id": 6
-    },
-    {
       "title": "12323",
       "categoryId": 1,
       "status": false,
       "userId": 1,
       "id": 7
+    },
+    {
+      "title": "123123213",
+      "categoryId": 1,
+      "status": false,
+      "userId": 1,
+      "id": 8
+    },
+    {
+      "title": "123123123",
+      "categoryId": 1,
+      "status": false,
+      "userId": 2,
+      "id": 9
     }
   ]
 }

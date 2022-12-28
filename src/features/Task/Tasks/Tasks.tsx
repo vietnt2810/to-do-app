@@ -1,22 +1,22 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ReactPaginate from "react-paginate";
 import { Outlet, useNavigate } from "react-router-dom";
-import { useGetTasks } from "hooks/useGetTasks";
+import { useGetTasks } from "hooks/task/tasks/useGetTasks";
 
 import { Task } from "types/types";
 
 import TaskItems from "./TaskItems";
 
+import SearchBar from "./SearchBar";
+
 import {
   Container,
-  SearchBar,
-  SearchInput,
   TaskTable,
   TableHeaderRow,
   Pagination,
 } from "./tasksStyles";
-import { Button, ButtonHolder } from "components/StyledComponents/button";
-import { Message } from "components/StyledComponents/message";
+import { Button, ButtonHolder } from "components/styledComponents/button";
+import { Message } from "components/styledComponents/message";
 
 const Tasks: React.FC<{
   itemsPerPage: number;
@@ -31,7 +31,7 @@ const Tasks: React.FC<{
     return task.title.toLowerCase().includes(filterValue.toLowerCase());
   });
 
-  const handleChangeSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSearchBar = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFilterValue(e.target.value);
   };
 
@@ -53,35 +53,27 @@ const Tasks: React.FC<{
     setItemOffset(newOffset);
   };
 
+  if (isTasksLoading) return <Message>Loading..</Message>;
+
+  if (isError) return <Message>Error</Message>;
+
   return (
     <Container>
-      {isTasksLoading && <Message>Loading..</Message>}
-      {isError && <Message>Error</Message>}
-      {!isTasksLoading && !isError && (
-        <React.Fragment>
-          <SearchBar>
-            <SearchInput
-              placeholder="Search a task"
-              value={filterValue}
-              onChange={(e) => handleChangeSearchInput(e)}
-            />
-          </SearchBar>
-          <TaskTable>
-            <tbody>
-              <TableHeaderRow>
-                <th>Title</th>
-                <th>Category</th>
-                <th>Status</th>
-              </TableHeaderRow>
-              <TaskItems currentItems={currentItems} />
-            </tbody>
-          </TaskTable>
-          <ButtonHolder>
-            <Button onClick={handleAddTask}>Add a task</Button>
-            <Button onClick={handleAddCategory}>Add a category</Button>
-          </ButtonHolder>
-        </React.Fragment>
-      )}
+      <SearchBar filterValue={filterValue} handleChange={handleSearchBar} />
+      <TaskTable>
+        <tbody>
+          <TableHeaderRow>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Status</th>
+          </TableHeaderRow>
+          <TaskItems currentItems={currentItems} />
+        </tbody>
+      </TaskTable>
+      <ButtonHolder>
+        <Button onClick={handleAddTask}>Add a task</Button>
+        <Button onClick={handleAddCategory}>Add a category</Button>
+      </ButtonHolder>
 
       <Pagination>
         <ReactPaginate

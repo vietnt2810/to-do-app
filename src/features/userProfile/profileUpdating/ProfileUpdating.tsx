@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "hooks/useAuth";
+import { useAuth } from "hooks/common/useAuth";
 
 import {
   Overlay,
@@ -9,8 +9,8 @@ import {
   DialogContent,
   FieldName,
   InputField,
-} from "components/StyledComponents/dialogForm";
-import { Button, ButtonHolder } from "components/StyledComponents/button";
+} from "components/styledComponents/dialogForm";
+import { Button, ButtonHolder } from "components/styledComponents/button";
 
 const ProfileUpdating: React.FC = () => {
   const navigate = useNavigate();

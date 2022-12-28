@@ -19,9 +19,6 @@ export const SearchBar = styled("div", {
   lineHeight: "1.5",
   border: "1px solid $greyColor",
   borderRadius: "10px",
-  "&:hover": {
-    border: "1px solid $darkColor",
-  },
 });
 
 export const SearchInput = styled("input", {
@@ -36,8 +33,8 @@ export const SearchInput = styled("input", {
   backgroundSize: "23px",
   backgroundRepeat: "no-repeat",
   backgroundPosition: "10px center",
-  "&:focus": {
-    border: "2px solid $headerColor",
+  "&:hover": {
+    cursor: "pointer",
   },
 });
 
@@ -102,7 +99,7 @@ export const Pagination = styled("div", {
       position: "relative",
       float: "left",
       padding: "5px 10px",
-      lineHeight: "1.42857143",
+      lineHeight: "1.5",
       textDecoration: "none",
       color: "#fff",
       backgroundColor: "$greyColor",

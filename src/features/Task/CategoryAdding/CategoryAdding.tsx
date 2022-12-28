@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAddCategory } from "hooks/useAddCategory";
+import { useAddCategory } from "hooks/task/categoryAdding/useAddCategory";
 
 import {
   Overlay,
@@ -9,8 +9,8 @@ import {
   DialogContent,
   FieldName,
   InputField,
-} from "components/StyledComponents/dialogForm";
-import { Button, ButtonHolder } from "components/StyledComponents/button";
+} from "components/styledComponents/dialogForm";
+import { Button, ButtonHolder } from "components/styledComponents/button";
 
 const CategoryAdding: React.FC = () => {
   const navigate = useNavigate();

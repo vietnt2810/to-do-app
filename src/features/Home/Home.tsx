@@ -1,5 +1,4 @@
-import { useAuth } from "hooks/useAuth";
-
+import { useAuth } from "hooks/common/useAuth";
 import { Title } from "./homeStyles";
 
 const Home: React.FC = () => {

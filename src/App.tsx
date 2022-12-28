@@ -1,13 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 import { useEffect } from "react";
-import { useAuth } from "hooks/useAuth";
+import { useAuth } from "hooks/common/useAuth";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-import MainLayoutRoutes from "Routes/MainLayoutRoutes";
+import MainLayoutRoutes from "routes/MainLayoutRoutes";
 
-import Login from "features/Auth/Login/Login";
-import SignUp from "features/Auth/SignUp/SignUp";
+import Login from "features/auth/login/Login";
+import SignUp from "features/auth/signUp/SignUp";
 
 import "./App.css";
 

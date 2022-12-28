@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import { useNavigate, useParams } from "react-router-dom";
-import { useGetCategories } from "hooks/useGetCategories";
-import { useUpdateTask } from "hooks/useUpdateTask";
-import { useGetTask } from "hooks/useGetTask";
+import { useGetCategories } from "hooks/task/common/useGetCategories";
+import { useUpdateTask } from "hooks/task/common/useUpdateTask";
+import { useGetTask } from "hooks/task/taskUpdating/useGetTask";
 
 import { Category } from "types/types";
 
@@ -15,9 +15,9 @@ import {
   FieldName,
   InputField,
   CategorySelectField,
-} from "components/StyledComponents/dialogForm";
-import { Message } from "components/StyledComponents/message";
-import { Button, ButtonHolder } from "components/StyledComponents/button";
+} from "components/styledComponents/dialogForm";
+import { Message } from "components/styledComponents/message";
+import { Button, ButtonHolder } from "components/styledComponents/button";
 
 const TaskUpdating: React.FC = () => {
   const navigate = useNavigate();
