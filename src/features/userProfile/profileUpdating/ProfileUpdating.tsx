@@ -32,7 +32,7 @@ const ProfileUpdating: React.FC = () => {
   };
 
   const handleUpdateButton = () => {
-    auth?.updateUser(user);
+    auth.updateUser(user);
     navigate("/profile");
   };
 

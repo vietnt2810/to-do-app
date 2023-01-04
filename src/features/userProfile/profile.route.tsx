@@ -1,4 +1,4 @@
-import { RouteItem } from "types/types";
+import { RouteItem } from "types/route.type";
 
 import { ConstantsPathsEnum } from "constants/constants.path";
 import ProfileScreen from "./profile/Profile";

@@ -1,8 +1,6 @@
-import stitches from "stiches";
+import { styled } from "@stitches/react";
 
 import EditIcon from "@mui/icons-material/Edit";
-
-const { styled } = stitches;
 
 export const Container = styled("div", {
   width: "30%",

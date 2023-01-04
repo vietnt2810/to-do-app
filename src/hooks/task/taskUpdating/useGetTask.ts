@@ -2,29 +2,31 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { api } from "api/api";
 
+import { Task } from "types/task.type";
+
 export const useGetTask = (taskId: string | undefined) => {
   const queryClient = useQueryClient();
 
-  return useQuery(
-    ["task", taskId],
-    () => {
-      return api.get(`tasks/${taskId}`);
+  const {
+    data: task,
+    isLoading: isTaskLoading,
+    isError,
+  } = useQuery<Task>({
+    queryKey: ["task", taskId],
+    queryFn: async () => {
+      const response = await api.get(`tasks/${taskId}?_expand=category`);
+
+      return response.data;
     },
-    {
-      initialData: () => {
-        const tasksQueryCache: any = queryClient.getQueryData(["tasks"]);
 
-        const task = tasksQueryCache?.data?.find(
-          (task: any) => task.id === parseInt(taskId as string)
-        );
+    initialData: () => {
+      const initialTask = queryClient
+        .getQueryData<Task[]>(["tasks"])
+        ?.find((task) => task.id === parseInt(taskId as string));
 
-        if (task) {
-          return { data: task };
-        } else {
-          return undefined;
-        }
-      },
-      refetchOnWindowFocus: false,
-    }
-  );
+      return initialTask;
+    },
+  });
+
+  return { task, isTaskLoading, isError };
 };

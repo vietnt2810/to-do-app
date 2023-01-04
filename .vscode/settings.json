@@ -1,6 +1,8 @@
 {
-    "files.insertFinalNewline": true,
-    "cSpell.words": [
-        "tanstack"
-    ]
+  "files.insertFinalNewline": true,
+  "cSpell.words": [],
+  "cSpell.patterns": [
+    
+  ],
+  "cSpell.overrides": []
 }

@@ -2,13 +2,11 @@ import { useMutation } from "@tanstack/react-query";
 
 import { api } from "api/api";
 
-type addedCategory = {
-  categoryName: string;
-};
+import { Category } from "types/task.type";
 
 export const useAddCategory = () => {
   const { mutate: addCategory } = useMutation({
-    mutationFn: (category: addedCategory) => {
+    mutationFn: (category: Omit<Category, "id">) => {
       return api.post("categories", category);
     },
   });

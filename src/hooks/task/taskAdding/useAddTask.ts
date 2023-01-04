@@ -2,18 +2,13 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { api } from "api/api";
 
-type AddedTask = {
-  userId: number;
-  categoryId: number;
-  title: string;
-  status: boolean;
-};
+import { Task } from "types/task.type";
 
 export const useAddTask = () => {
   const queryClient = useQueryClient();
 
   const { mutate: addTask } = useMutation({
-    mutationFn: (task: AddedTask) => {
+    mutationFn: (task: Omit<Task, "id" | "category">) => {
       return api.post("tasks", task);
     },
 

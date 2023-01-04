@@ -23,7 +23,7 @@ const ProfileScreen: React.FC = () => {
   };
 
   const handleLogout = () => {
-    auth?.logout();
+    auth.logout();
   };
 
   return (
@@ -33,8 +33,8 @@ const ProfileScreen: React.FC = () => {
           <EditingIcon onClick={handleUpdating} />
         </ProfileTopper>
         <Avatar src={profileImage}></Avatar>
-        <Username>{auth?.user?.username}</Username>
-        <Email>{auth?.user?.email}</Email>
+        <Username>{auth.user?.username}</Username>
+        <Email>{auth.user?.email}</Email>
         <Button onClick={handleLogout}>Logout</Button>
       </Container>
       <Outlet />
