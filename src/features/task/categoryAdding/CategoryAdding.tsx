@@ -18,18 +18,18 @@ const CategoryAdding: React.FC = () => {
   const { addCategory } = useAddCategory();
 
   const [newCategory, setNewCategory] = useState({
-    categoryName: "",
+    category_name: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setNewCategory({
       ...newCategory,
-      categoryName: e.target.value,
+      category_name: e.target.value,
     });
   };
 
   const handleAddButton = () => {
-    if (newCategory.categoryName === "") {
+    if (newCategory.category_name === "") {
       alert("Category's name cannot be empty");
     } else {
       addCategory(newCategory);
@@ -50,7 +50,7 @@ const CategoryAdding: React.FC = () => {
           <InputField
             placeholder="Type something"
             name="title"
-            value={newCategory.categoryName}
+            value={newCategory.category_name}
             onChange={(e) => handleChange(e)}
           />
           <ButtonHolder>

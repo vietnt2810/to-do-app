@@ -14,9 +14,11 @@ export const useGetTask = (taskId: string | undefined) => {
   } = useQuery<Task>({
     queryKey: ["task", taskId],
     queryFn: async () => {
-      const response = await api.get(`tasks/${taskId}?_expand=category`);
+      const response = await api.get(
+        `tasks/${JSON.parse(String(localStorage.getItem("user"))).id}/${taskId}`
+      );
 
-      return response.data;
+      return response.data[0];
     },
 
     initialData: () => {

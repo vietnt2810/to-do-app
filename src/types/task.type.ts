@@ -1,20 +1,20 @@
 export type Category = {
   id: number;
-  categoryName: string;
+  category_name: string;
 };
 
 export type Task = {
   id: number;
-  userId: number;
-  categoryId: number;
+  user_id: number;
+  category_id: number;
   title: string;
   status: boolean;
-  category: Category;
+  category_name: string;
 };
 
 export type UpdatedTask = {
   id: number;
-  categoryId?: number;
+  category_id?: number;
   title?: string;
   status?: boolean;
 };

@@ -9,7 +9,9 @@ export const useUpdateTask = () => {
 
   const { mutate: updateTask } = useMutation({
     mutationFn: (task: UpdatedTask) => {
-      return api.patch(`tasks/${task.id}`, task);
+      console.log(task);
+
+      return api.put(`tasks/${task.id}`, task);
     },
 
     onSettled: () => {

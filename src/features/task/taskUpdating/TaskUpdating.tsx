@@ -30,15 +30,19 @@ const TaskUpdating: React.FC = () => {
 
   const { task, isTaskLoading, isError } = useGetTask(taskId);
 
+  console.log(task);
+
   const [taskInputValue, setTaskInputValue] = useState({
     title: task?.title,
-    categoryId: task?.categoryId,
+    status: task?.status,
+    category_id: task?.category_id,
   });
 
   useEffect(() => {
     setTaskInputValue({
       title: task?.title,
-      categoryId: task?.categoryId,
+      status: task?.status,
+      category_id: task?.category_id,
     });
   }, [task]);
 
@@ -52,7 +56,7 @@ const TaskUpdating: React.FC = () => {
     setTaskInputValue({ ...taskInputValue, [name]: value });
 
     if (name === "category") {
-      setTaskInputValue({ ...taskInputValue, categoryId: Number(value) });
+      setTaskInputValue({ ...taskInputValue, category_id: Number(value) });
     }
   };
 
@@ -84,13 +88,14 @@ const TaskUpdating: React.FC = () => {
               />
               <FieldName>Category</FieldName>
               <CategorySelectField
-                value={taskInputValue.categoryId}
+                value={taskInputValue.category_id}
                 onChange={(e) => handleChangeInput(e)}
                 name="category"
               >
+                <option></option>
                 {categories?.map((category) => (
                   <option key={category.id} value={category.id}>
-                    {category.categoryName}
+                    {category.category_name}
                   </option>
                 ))}
               </CategorySelectField>

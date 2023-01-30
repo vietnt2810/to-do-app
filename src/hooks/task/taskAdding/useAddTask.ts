@@ -8,7 +8,7 @@ export const useAddTask = () => {
   const queryClient = useQueryClient();
 
   const { mutate: addTask } = useMutation({
-    mutationFn: (task: Omit<Task, "id" | "category">) => {
+    mutationFn: (task: Omit<Task, "id" | "category" | "category_name">) => {
       return api.post("tasks", task);
     },
 

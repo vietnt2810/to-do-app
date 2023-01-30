@@ -13,8 +13,11 @@ import {
   CategorySelectField,
 } from "components/styledComponents/dialogForm";
 import { Button, ButtonHolder } from "components/styledComponents/button";
+import { useAuth } from "hooks/common/useAuth";
 
 const TaskAdding: React.FC = () => {
+  const auth = useAuth();
+
   const navigate = useNavigate();
 
   const { categories } = useGetCategories();
@@ -23,9 +26,9 @@ const TaskAdding: React.FC = () => {
 
   const [newTask, setNewTask] = useState({
     title: "",
-    categoryId: 1,
+    category_id: 0,
     status: false,
-    userId: JSON.parse(localStorage.getItem("user") as string).id,
+    user_id: Number(auth.user?.id),
   });
 
   const handleChange = (
@@ -38,13 +41,13 @@ const TaskAdding: React.FC = () => {
     setNewTask({ ...newTask, [name]: value });
 
     if (name === "category") {
-      setNewTask({ ...newTask, categoryId: parseInt(value) });
+      setNewTask({ ...newTask, category_id: parseInt(value) });
     }
   };
 
   const handleAddButton = () => {
-    if (newTask.title === "") {
-      alert("Title cannot be empty");
+    if (newTask.title === "" || newTask.category_id === 0) {
+      alert("Please fill in information for the new task");
     } else {
       addTask(newTask);
       navigate("/tasks");
@@ -72,9 +75,10 @@ const TaskAdding: React.FC = () => {
             name="category"
             onChange={(e) => handleChange(e)}
           >
+            <option></option>
             {categories?.map((category) => (
               <option key={category.id} value={category.id}>
-                {category.categoryName}
+                {category.category_name}
               </option>
             ))}
           </CategorySelectField>
