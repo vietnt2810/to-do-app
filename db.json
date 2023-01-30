@@ -1,0 +1,101 @@
+{
+  "users": [
+    {
+      "email": "viet@gmail.com",
+      "password": "$2a$10$cSJeu.GHnNKjsqaFU8Enw.vSfRo3to6BRdc7BJ7mz9D3/UroIuktu",
+      "username": "XD",
+      "id": 1
+    },
+    {
+      "email": "viet2@gmail.com",
+      "password": "$2a$10$LdH.9YbtFCAhu00b9NkPSODD2Dj9mfPT5FSIw8SBcpoGadbvt6I1W",
+      "username": "123123",
+      "id": 2
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "categoryName": "Category 1"
+    },
+    {
+      "id": 2,
+      "categoryName": "Category 2"
+    },
+    {
+      "categoryName": "123123123",
+      "id": 3
+    },
+    {
+      "categoryName": "123123",
+      "id": 4
+    },
+    {
+      "categoryName": "123123",
+      "id": 5
+    },
+    {
+      "categoryName": "123123",
+      "id": 6
+    },
+    {
+      "categoryName": "13123123",
+      "id": 7
+    },
+    {
+      "categoryName": "XDDD",
+      "id": 8
+    }
+  ],
+  "tasks": [
+    {
+      "title": "1",
+      "categoryId": 2,
+      "status": false,
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "title": "xd132",
+      "categoryId": 1,
+      "status": false,
+      "userId": 1,
+      "id": 5
+    },
+    {
+      "title": "12323",
+      "categoryId": 1,
+      "status": false,
+      "userId": 1,
+      "id": 7
+    },
+    {
+      "title": "123123123",
+      "categoryId": 1,
+      "status": false,
+      "userId": 2,
+      "id": 9
+    },
+    {
+      "title": "12412",
+      "categoryId": 1,
+      "status": false,
+      "userId": 1,
+      "id": 10
+    },
+    {
+      "title": "124214",
+      "categoryId": 1,
+      "status": false,
+      "userId": 1,
+      "id": 11
+    },
+    {
+      "title": "123213XĐ",
+      "categoryId": 8,
+      "status": false,
+      "userId": 1,
+      "id": 12
+    }
+  ]
+}
