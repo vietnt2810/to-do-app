@@ -26,9 +26,16 @@ const TaskItems: React.FC<{ currentItems: Task[] }> = ({ currentItems }) => {
 
   const [open, setOpen] = useState(false);
 
-  const handleCheck = (taskId: number, taskStatus: boolean) => {
+  const handleCheck = (
+    taskId: number,
+    title: string,
+    category_id: number,
+    taskStatus: boolean
+  ) => {
     updateTask({
       id: taskId,
+      title: title,
+      category_id: category_id,
       status: !taskStatus,
     });
   };
@@ -60,11 +67,20 @@ const TaskItems: React.FC<{ currentItems: Task[] }> = ({ currentItems }) => {
       {currentItems?.map((task) => (
         <TableContentRow key={task.id}>
           <td>{task.title}</td>
-          <td>{task.category.categoryName}</td>
+          <td>{task.category_name}</td>
           <td>{task.status ? "Finished" : "Unfinished"}</td>
           <td>
             <TaskButtonHolder>
-              <TaskButton onClick={() => handleCheck(task.id, task.status)}>
+              <TaskButton
+                onClick={() =>
+                  handleCheck(
+                    task.id,
+                    task.title,
+                    task.category_id,
+                    task.status
+                  )
+                }
+              >
                 {task.status ? "❌" : "✔️"}
               </TaskButton>
               <TaskButton onClick={() => handleUpdate(task.id)}>✂</TaskButton>

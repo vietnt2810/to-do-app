@@ -13,9 +13,7 @@ export const useGetTasks = () => {
     queryKey: ["tasks"],
     queryFn: async () => {
       const response = await api.get(
-        `users/${
-          JSON.parse(localStorage.getItem("user") as string).id
-        }/tasks?_expand=category`
+        `tasks/${JSON.parse(String(localStorage.getItem("user"))).id}`
       );
 
       return response.data;
